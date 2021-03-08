@@ -1,0 +1,11 @@
+### everything but this file, init.el and lib/
+/*
+!.gitignore
+!init.el
+!/lib
+
+### Emacs
+*~
+.*~
+#*
+.#*
