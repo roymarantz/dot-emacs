@@ -47,6 +47,7 @@
 
 ;; prevent initial splash screen which would be always shown
 (setq inhibit-startup-screen t)
+;;;(tool-bar-mode -1)			; loose the toolbar
 
 ;; default frame (window) size
 (setq default-frame-alist '((width . 81) (height . 30) (menu-bar-lines . 1)))
@@ -73,6 +74,39 @@
 
 ;;show columns in mode line
 (setq column-number-mode t)
+
+;;; these are probably not needed
+;(add-to-list 'exec-path "/usr/local/bin")
+;(setq ispell-program-name "aspell")
+
+;;; Mac OSX
+(when (eq system-type 'darwin)
+  (global-set-key [triple-wheel-left] 'move-beginning-of-line)
+  (global-set-key [triple-wheel-right] 'move-end-of-line)
+
+  ;; default Latin font (e.g. Consolas)
+  (set-face-attribute 'default nil :family "Monaco")
+
+  ;; default font size (point * 14)
+  ;;
+  ;; WARNING!  Depending on the default font,
+  ;; if the size is not supported very well, the frame will be clipped
+  ;; so that the beginning of the buffer may not be visible correctly.
+  ;;; (set-face-attribute 'default nil :height 165)
+  (set-face-attribute 'default nil :height 140)
+  ;; use specific font for Korean charset.
+  ;; if you want to use different font size for specific charset,
+  ;; add :size POINT-SIZE in the font-spec.
+  ;;; (set-fontset-font t 'hangul (font-spec :name "NanumGothicCoding"))
+  ;; you may want to add different for other charset in this way.
+
+  ;; ;; multiple cursors (on laptop only for now)
+  ;; (require 'multiple-cursors)
+  ;; (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+  ;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+  ;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+  ;; (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+  )
 
 (provide 'init)
 ;;; init.el ends here
