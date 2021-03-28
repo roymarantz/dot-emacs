@@ -15,7 +15,7 @@
     )
    :config
    (add-to-list 'eglot-server-programs
-   		'(terraform-mode . ("terraform-ls" "server")))
+   		'(terraform-mode . ("terraform-ls" "serve")))
    ;; :init
    ;; (setq eglot-workspace-configuration
    ;; 	 '((pyls
