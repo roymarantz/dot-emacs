@@ -1,3 +1,4 @@
+;;; https://github.com/joaotavora/eglot
 (use-package eglot :straight t
    ;; Hook into modes that I always want LSP functionality in.
    :hook
