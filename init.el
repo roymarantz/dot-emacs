@@ -79,12 +79,18 @@
 ;(add-to-list 'exec-path "/usr/local/bin")
 ;(setq ispell-program-name "aspell")
 
+;; for M-x compile and M-x grep matching
+(global-set-key (kbd "M-n") 'next-error)
+(global-set-key (kbd "M-p") 'previous-error)
+
+(global-set-key (kbd "s-;") 'comment-region)
+
 ;;; Mac OSX
 (when (eq system-type 'darwin)
   (global-set-key [triple-wheel-left] 'move-beginning-of-line)
   (global-set-key [triple-wheel-right] 'move-end-of-line)
 
-  ;; default Latin font (e.g. Consolas)
+  ;; default Latin font (e.g. Consoles)
   (set-face-attribute 'default nil :family "Monaco")
 
   ;; default font size (point * 14)
