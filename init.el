@@ -90,6 +90,10 @@
   (global-set-key [triple-wheel-left] 'move-beginning-of-line)
   (global-set-key [triple-wheel-right] 'move-end-of-line)
 
+  ;; simulate mouse-2 with command trackpad click
+  (eval-after-load 'flyspell'
+    (define-key flyspell-mouse-map (kbd "<s-down-mouse-1>") #'flyspell-correct-word))
+
   ;; default Latin font (e.g. Consoles)
   (set-face-attribute 'default nil :family "Monaco")
 
