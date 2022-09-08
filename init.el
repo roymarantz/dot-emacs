@@ -9,7 +9,6 @@
  custom-file (or (getenv "EMACS_CUSTOM_FILE")
                  (concat user-emacs-directory "/my-custom.el")))
 
-
 ;; from https://github.com/raxod502/straight.el#getting-started
 (defvar bootstrap-version)
 (let ((bootstrap-file
@@ -44,6 +43,12 @@
   (message "[STARTUP] Loading %s ... done (%.3fs)" load-file-name elapsed))
 
 ;; my normal customizations
+
+;; Display visited file's path in the frame title
+(setq frame-title-format
+      '((:eval (if (buffer-file-name)
+                   (abbreviate-file-name (buffer-file-name))
+                 "%b"))))
 
 ;; prevent initial splash screen which would be always shown
 (setq inhibit-startup-screen t)
