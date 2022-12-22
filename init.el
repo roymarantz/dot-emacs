@@ -9,6 +9,7 @@
  custom-file (or (getenv "EMACS_CUSTOM_FILE")
                  (concat user-emacs-directory "/my-custom.el")))
 
+
 ;; from https://github.com/raxod502/straight.el#getting-started
 (defvar bootstrap-version)
 (let ((bootstrap-file
@@ -48,7 +49,7 @@
 (setq frame-title-format
       '((:eval (if (buffer-file-name)
                    (abbreviate-file-name (buffer-file-name))
-                 "%b"))))
+                 "emacs - %b"))))
 
 ;; prevent initial splash screen which would be always shown
 (setq inhibit-startup-screen t)
