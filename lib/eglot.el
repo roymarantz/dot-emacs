@@ -17,6 +17,9 @@
    :config
    (add-to-list 'eglot-server-programs
    		'(terraform-mode . ("terraform-ls" "serve")))
+   ;; this doesn't work, do a load-library project manually
+   ;(use-package project)	; this is supposed to happen automatically
+
    ;; :init
    ;; (setq eglot-workspace-configuration
    ;; 	 '((pyls
@@ -31,3 +34,4 @@
    ;; 	      (fuzzy . t)
    ;; 	      (follow_builtin_imports . :json-false))))))
 )
+
