@@ -58,8 +58,11 @@
 (setq inhibit-startup-screen t)
 ;;;(tool-bar-mode -1)			; loose the toolbar
 
-;; default frame (window) size
+;; default frame (window) size and font
 (setq default-frame-alist '((width . 81) (height . 30) (menu-bar-lines . 1)))
+(add-to-list 'default-frame-alist
+             '(font . "DejaVu Sans Mono-16"))
+  
 
 (defalias 'yes-or-no-p 'y-or-n-p)	; yes/no is too long to type
 (setq backup-inhibited nil)		; I want backups
