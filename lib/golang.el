@@ -14,3 +14,4 @@
   (local-set-key (kbd "M-.") 'godef-jump)
   )
 (add-hook 'go-mode-hook 'my-go-mode-keys)
+(add-hook 'go-mode-hook 'flymake-mode)

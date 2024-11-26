@@ -13,6 +13,7 @@
     ;; (ruby-mode . eglot-ensure)
     (sh-mode . eglot-ensure)
     ;;(terraform-mode. eglot-ensure)
+    ;;(haskell-mode . eglot-ensure) flycheck conflicts with eglot, use flymake
     )
    :config
    (add-to-list 'eglot-server-programs
@@ -20,6 +21,16 @@
    ;; this doesn't work, do a load-library project manually
    ;(use-package project)	; this is supposed to happen automatically
 
+   ;; from https://haskell-language-server.readthedocs.io/en/latest/configuration.html#emacs
+   ;;:config
+   ;; (add-to-list 'eglot-workspace-configuration
+   ;;              '(haskell
+   ;;                (plugin
+   ;;                 (stan
+   ;;                  (globalOn . :json-false)))))  ;; disable stan
+   :custom
+   (eglot-autoshutdown t)  ;; shutdown language server after closing last file
+   ;;(eglot-confirm-server-initiated-edits nil)  ;; allow edits without confirmation
    ;; :init
    ;; (setq eglot-workspace-configuration
    ;; 	 '((pyls
