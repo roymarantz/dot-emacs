@@ -5,8 +5,7 @@
    (
     ;; (gdscript-mode . eglot-ensure)
     ;; (go-mode . eglot-ensure)
-    ;;(haskell-mode . flyspell-prog-mode)
-    (haskell-mode . eglot-ensure)
+    ;;(haskell-mode . eglot-ensure)   doesn't work well w/o project(cabal/stack)
     ;; (web-mode . eglot-ensure)
     ;; (c-mode . eglot-ensure)
     ;; (c++-mode . eglot-ensure)
